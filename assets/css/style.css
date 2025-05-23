@@ -1,6 +1,6 @@
-/*-----------------------------------*\
+/* -----------------------------------*\
  * style.css
-\*-----------------------------------*/
+\*----------------------------------- */
 
 /**
  * copyright 2022 codewithsadee
@@ -10,21 +10,20 @@
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #CUSTOM PROPERTY
-\*-----------------------------------*/
+\*----------------------------------- */
 
 :root {
-
   /**
    * colors
    */
 
-  --raw-seinna: hsl(24, 74%, 58%);
-  --sizzling-sunrise: hsl(51, 95%, 54%);
-  --scarlet: hsl(13, 96%, 47%);
-  --black: hsl(0, 0%, 0%);
-  --white: hsl(0, 0%, 100%);
+  --raw-seinna: hsl(24deg 74% 58%);
+  --sizzling-sunrise: hsl(51deg 95% 54%);
+  --scarlet: hsl(13deg 96% 47%);
+  --black: hsl(0deg 0% 0%);
+  --white: hsl(0deg 0% 100%);
 
   /**
    * typography
@@ -33,7 +32,6 @@
   --ff-saira-stencil-one: "Saira Stencil One", sans-serif; 
   --ff-poppins: 'Poppins', sans-serif;
   --ff-roboto: 'Roboto', sans-serif;
-
   --fs-1: 2rem;
   --fs-2: calc(1.813rem + 1vw);
   --fs-3: calc(1.313rem + 1vw);
@@ -41,7 +39,6 @@
   --fs-5: 1rem;
   --fs-6: 0.813rem;
   --fs-7: 0.75rem;
-
   --fw-400: 400;
   --fw-700: 700;
 
@@ -70,32 +67,28 @@
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #THEME COLORS
-\*-----------------------------------*/
+\*----------------------------------- */
 
-body.dark_theme {
-
-  --bg-primary: hsl(0, 0%, 12%);
-  --bg-secondary: hsl(0, 0%, 19%);
-  --color-primary: hsl(0, 0%, 100%);
-  --color-secondary: hsl(0, 0%, 62%);
-  --card-shadow: hsla(0, 0%, 0%, 0.4);
-  --input-bg: hsl(0, 0%, 16%);
-
+body.dark-theme {
+  --bg-primary: hsl(0deg 0% 12%);
+  --bg-secondary: hsl(0deg 0% 19%);
+  --color-primary: hsl(0deg 0% 100%);
+  --color-secondary: hsl(0deg 0% 62%);
+  --card-shadow: hsl(0deg 0% 0% / 40%);
+  --input-bg: hsl(0deg 0% 16%);
   --shadow-1: 10px 10px 40px var(--card-shadow);
 
 }
 
-body.light_theme {
-
-  --bg-primary: hsl(0, 0%, 90%);
-  --bg-secondary: hsl(0, 0%, 100%);
-  --color-primary: hsl(0, 0%, 12%);
-  --color-secondary: hsl(0, 0%, 37%);
-  --card-shadow: hsla(0, 0%, 0%, 0.1);
-  --input-bg: hsl(0, 0%, 93%);
-
+body.light-theme {
+  --bg-primary: hsl(0deg 0% 90%);
+  --bg-secondary: hsl(0deg 0% 100%);
+  --color-primary: hsl(0deg 0% 12%);
+  --color-secondary: hsl(0deg 0% 37%);
+  --card-shadow: hsl(0deg 0% 0% / 10%);
+  --input-bg: hsl(0deg 0% 93%);
   --shadow-1: 10px 10px 40px var(--card-shadow);
 
 }
@@ -104,9 +97,9 @@ body.light_theme {
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #RESET
-\*-----------------------------------*/
+\*----------------------------------- */
 
 *, *::before, *::after {
   margin: 0;
@@ -146,7 +139,9 @@ textarea { width: 100%; }
 
 ion-icon { pointer-events: none; }
 
-:is(a, button, select) {
+a,
+button,
+select {
   outline-color: var(--scarlet);
   outline-offset: 3px;
 }
@@ -172,9 +167,9 @@ body.active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #REUSED STYLE
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .container { padding-inline: 10px; }
 
@@ -214,7 +209,8 @@ body.active { overflow: hidden; }
 
 .btn-primary { border-color: var(--color-primary); }
 
-.btn-primary:is(:hover, :focus) {
+.btn-primary:hover,
+.btn-primary:focus {
   background: var(--color-primary);
   color: var(--bg-primary);
 }
@@ -225,7 +221,8 @@ body.active { overflow: hidden; }
   color: var(--black);
 }
 
-.btn-secondary:is(:hover, :focus) { --raw-seinna: hsl(24, 74%, 64%); }
+.btn-secondary:hover,
+.btn-secondary:focus { --raw-seinna: hsl(24deg 74% 64%); }
 
 .section-subtitle {
   position: relative;
@@ -278,9 +275,9 @@ body.active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #HEADER
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .header {
   padding-block: 15px;
@@ -381,7 +378,8 @@ body.active { overflow: hidden; }
   transition: var(--transition-1);
 }
 
-.nav-toggle-btn :is(.one, .three) { width: 10px; }
+.nav-toggle-btn .one,
+.nav-toggle-btn .three { width: 10px; }
 
 .nav-toggle-btn .one {
   margin-left: auto;
@@ -456,9 +454,9 @@ body.active { overflow: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #HERO
-\*-----------------------------------*/
+\*----------------------------------- */
 
 main { overflow-x: hidden; }
 
@@ -493,9 +491,9 @@ main { overflow-x: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #STATS
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .stats { padding-block: var(--section-padding); }
 
@@ -515,7 +513,8 @@ main { overflow-x: hidden; }
   transition: var(--transition-1);
 }
 
-.stats-card:is(:hover, :focus) { transform: translateY(-5px); }
+.stats-card:hover,
+.stats-card:focus { transform: translateY(-5px); }
 
 .stats-card .card-icon {
   background: var(--raw-seinna);
@@ -551,9 +550,9 @@ main { overflow-x: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #ABOUT
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .about { padding-block: var(--section-padding); }
 
@@ -574,9 +573,9 @@ main { overflow-x: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #SKILLS
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .skills { padding-block: var(--section-padding); }
 
@@ -622,20 +621,35 @@ main { overflow-x: hidden; }
 
 .toggle-btn.active { color: var(--white); }
 
-.skills-box.active .skills-list,
-.skills-box .tools-list { display: none; }
+/* Default state: show skills-list, hide tools-list */
+.skills-box .skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fade-in 0.5s ease-out forwards;
+}
 
-.skills-box .skills-list,
+.skills-box .tools-list {
+  display: none;
+}
+
+/* Active state: hide skills-list, show tools-list */
+.skills-box.active .skills-list {
+  display: none;
+}
+
 .skills-box.active .tools-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fade-in 0.5s ease-out forwards;
 }
 
-@keyframes fadeIn {
+@keyframes fade-in {
 
   0% { opacity: 0; }
   100% { opacity: 1; }
@@ -663,9 +677,9 @@ main { overflow-x: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #PROJECT
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .project { padding-block: var(--section-padding); }
 
@@ -675,7 +689,7 @@ main { overflow-x: hidden; }
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-12);
-  box-shadow: 2px 4px 6px hsla(0, 0%, 0%, 0.2);
+  box-shadow: 2px 4px 6px hsl(0deg 0% 0% / 20%);
 }
 
 .project-card::after {
@@ -686,8 +700,10 @@ main { overflow-x: hidden; }
   transition: var(--transition-1);
 }
 
-.project-card:is(:hover, :focus)::after {
-  background: hsla(0, 0%, 100%, 0.1);
+.project-card:hover::after,
+.project-card:focus::after {
+  background: hsl(0deg 0% 100% / 10%);
+  -webkit-backdrop-filter: blur(0.5px);
   backdrop-filter: blur(0.5px);
 }
 
@@ -701,7 +717,10 @@ main { overflow-x: hidden; }
 
 .project-card .card-title { margin-bottom: 10px; }
 
-.project-card :is(.card-title, .publish-date) {
+.project-card:hover .card-title,
+.project-card:focus .card-title,
+.project-card:hover .publish-date,
+.project-card:focus .publish-date {
   background: var(--bg-primary);
   padding: 6px 12px;
   width: max-content;
@@ -717,12 +736,33 @@ main { overflow-x: hidden; }
   transition-delay: 0s;
 }
 
-.project-card:is(:hover, :focus) :is(.card-title, .publish-date) {
+/* Base style for .card-title and .publish-date within .project-card */
+.project-card .card-title,
+.project-card .publish-date {
+  background: var(--bg-primary);
+  padding: 6px 12px;
+  width: max-content;
+  box-shadow: var(--shadow-1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: var(--transition-1);
+}
+
+/* Styles for .card-title and .publish-date on .project-card hover/focus */
+.project-card:hover .card-title,
+.project-card:focus .card-title,
+.project-card:hover .publish-date,
+.project-card:focus .publish-date {
   transform: translateY(0);
   opacity: 1;
 }
 
-.project-card:is(:hover, :focus) .publish-date { transition-delay: 0.1s; }
+/* Styles for .publish-date on .project-card hover/focus (specific transition delay) */
+.project-card:hover .publish-date,
+.project-card:focus .publish-date {
+  transition-delay: 0.1s;
+}
+
 
 .load-more {
   font-size: var(--fs-4);
@@ -735,9 +775,9 @@ main { overflow-x: hidden; }
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #CONTACT
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .contact { padding-block: var(--section-padding); }
 
@@ -766,7 +806,8 @@ main { overflow-x: hidden; }
   transition: var(--transition-1);
 }
 
-.contact-info:not(address):is(:hover, :focus) { color: var(--color-primary); }
+.contact-info:not(address):hover,
+.contact-info:not(address):focus { color: var(--color-primary); }
 
 .contac-social-list {
   display: flex;
@@ -774,7 +815,7 @@ main { overflow-x: hidden; }
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
-  padding-inline: 40px;
+  padding-inline: 20px; /* Reduced padding */
 }
 
 .contact-social-link {
@@ -789,12 +830,14 @@ main { overflow-x: hidden; }
   transition: var(--transition-1);
 }
 
-.contact-social-link:is(:hover, :focus) {
+.contact-social-link:hover,
+.contact-social-link:focus {
   background: var(--raw-seinna);
   color: var(--white);
 }
 
-.contact-social-link:is(:hover, :focus) .tooltip {
+.contact-social-link:hover .tooltip,
+.contact-social-link:focus .tooltip {
   transform: translateY(0);
   opacity: 1;
 }
@@ -858,9 +901,9 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #FOOTER
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .footer {
   background: var(--bg-secondary);
@@ -885,9 +928,9 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #GO TO TOP
-\*-----------------------------------*/
+\*----------------------------------- */
 
 .go-top {
   position: fixed;
@@ -918,16 +961,15 @@ textarea.input-field {
 
 
 
-/*-----------------------------------*\
+/* -----------------------------------*\
  * #MEDIA QUERIES
-\*-----------------------------------*/
+\*----------------------------------- */
 
 /**
  * responsive for larger than 550px screen
  */
 
-@media (min-width: 550px) {
-
+@media (width >= 550px) {
   /**
    * REUSED STYLE
    */
@@ -962,8 +1004,7 @@ textarea.input-field {
  * responsive for larger than 768px screen
  */
 
-@media (min-width: 768px) {
-
+@media (width >= 768px) {
   /**
    * REUSED STYLE
    */
@@ -1018,14 +1059,12 @@ textarea.input-field {
  * responsive for larger than 992px screen
  */
 
-@media (min-width: 992px) {
-
+@media (width >= 992px) {
   /**
    * CUSTOM PROPERTY
    */
 
   :root {
-
     /**
      * typography
      */
@@ -1140,7 +1179,7 @@ textarea.input-field {
     filter: drop-shadow(2px 4px 10px var(--black));
   }
 
-  .hero .btn-primary:is(:hover, :focus) { color: hsl(0, 0%, 12%); }
+  .hero .btn-primary:is(:hover, :focus) { color: hsl(0deg 0% 12%); }
 
   .hero-social-list {
     display: block;
@@ -1168,7 +1207,8 @@ textarea.input-field {
     transition: var(--transition-1);
   }
 
-  .hero-social-link:is(:hover, :focus) { color: var(--color-primary); }
+.hero-social-link:hover,
+.hero-social-link:focus { color: var(--color-primary); }
 
   .hero-social-link .tooltip {
     --trans-x: 10px;
@@ -1178,8 +1218,10 @@ textarea.input-field {
     transform: translateY(-50%) translateX(var(--trans-x));
   }
 
-  .hero-social-link:is(:hover, :focus) .tooltip {
+.hero-social-link:hover .tooltip,
+.hero-social-link:focus .tooltip {
     --trans-x: 0;
+
     opacity: 1;
   }
 
@@ -1258,9 +1300,16 @@ textarea.input-field {
   .project-list { column-count: 3; }
 
   .project-list > li:first-child {
-    column-span: unset;
+    column-span: all; /* Ensure it spans all columns */
+    /* Adjust margins if necessary, original margins were:
     margin: 25px;
-    margin-left: 0;
+    margin-left: 0; */
+    /* For full span, typically want consistent bottom margin: */
+    margin-bottom: 25px; /* Or var(--section-padding) for consistency */
+    margin-left: 0; /* Keep if it aligns correctly */
+    margin-right: 0; /* Add if it needs to be explicitly zeroed */
+    margin-top: 0; /* Add if it needs to be explicitly zeroed */
+
   }
 
 
@@ -1305,8 +1354,7 @@ textarea.input-field {
  * responsive for larger than 1200px screen
  */
 
-@media (min-width: 1200px) {
-
+@media (width >= 1200px) {
   /**
    * REUSED STYLE
    */

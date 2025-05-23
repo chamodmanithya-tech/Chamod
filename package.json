@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "This is my personal web portfolio This project is my personal web project",
+  "main": "stylelint.config.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chamodmanithya-tech/Chamod.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chamodmanithya-tech/Chamod/issues"
+  },
+  "homepage": "https://github.com/chamodmanithya-tech/Chamod#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.27.0",
+    "globals": "^16.1.0"
+  }
+}

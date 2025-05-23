@@ -54,15 +54,26 @@ const toggleBtnBox = document.querySelector("[data-toggle-box]");
 const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
 const skillsBox = document.querySelector("[data-skills-box]");
 
-for (let i = 0; i < toggleBtns.length; i++) {
-  toggleBtns[i].addEventListener("click", function () {
+toggleBtns.forEach(btn => {
+  btn.addEventListener("click", function () {
+    // Remove active class from all buttons
+    toggleBtns.forEach(b => b.classList.remove("active"));
+    // Add active class to the clicked button
+    this.classList.add("active");
 
-    elemToggleFunc(toggleBtnBox);
-    for (let i = 0; i < toggleBtns.length; i++) { elemToggleFunc(toggleBtns[i]); }
-    elemToggleFunc(skillsBox);
-
+    // Check which button is active and set classes accordingly
+    // toggleBtns[0] is "Skills", toggleBtns[1] is "Tools"
+    if (toggleBtns[0].classList.contains("active")) {
+      // Skills button is active
+      toggleBtnBox.classList.remove("active"); // Indicator for "Skills"
+      skillsBox.classList.remove("active");    // Show skills-list
+    } else {
+      // Tools button is active
+      toggleBtnBox.classList.add("active");    // Indicator for "Tools"
+      skillsBox.classList.add("active");       // Show tools-list
+    }
   });
-}
+});
 
 
 
@@ -77,15 +88,15 @@ themeToggleBtn.addEventListener("click", function () {
   elemToggleFunc(themeToggleBtn);
 
   if (themeToggleBtn.classList.contains("active")) {
-    document.body.classList.remove("dark_theme");
-    document.body.classList.add("light_theme");
+    document.body.classList.remove("dark-theme");
+    document.body.classList.add("light-theme");
 
-    localStorage.setItem("theme", "light_theme");
+    localStorage.setItem("theme", "light-theme");
   } else {
-    document.body.classList.add("dark_theme");
-    document.body.classList.remove("light_theme");
+    document.body.classList.add("dark-theme");
+    document.body.classList.remove("light-theme");
 
-    localStorage.setItem("theme", "dark_theme");
+    localStorage.setItem("theme", "dark-theme");
   }
 
 });
@@ -94,12 +105,12 @@ themeToggleBtn.addEventListener("click", function () {
  * check & apply last time selected theme from localStorage
  */
 
-if (localStorage.getItem("theme") === "light_theme") {
+if (localStorage.getItem("theme") === "light-theme") {
   themeToggleBtn.classList.add("active");
-  document.body.classList.remove("dark_theme");
-  document.body.classList.add("light_theme");
+  document.body.classList.remove("dark-theme");
+  document.body.classList.add("light-theme");
 } else {
   themeToggleBtn.classList.remove("active");
-  document.body.classList.remove("light_theme");
-  document.body.classList.add("dark_theme");
+  document.body.classList.remove("light-theme");
+  document.body.classList.add("dark-theme");
 }
